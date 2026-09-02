@@ -1,0 +1,974 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Artikel - SMK Mulia Hati Insani</title>
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet">
+
+    <style>
+
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* ================================
+           BODY
+        ================================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06120d,
+                    #0b3d2e,
+                    #2f855a,
+                    #a8cdb5
+                );
+
+            min-height: 100vh;
+
+            padding: 25px 0;
+
+            color: #333;
+        }
+
+
+        /* ================================
+           WRAP
+        ================================= */
+
+        .wrap {
+            width: 92%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            background: #f7fff9;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, 0.35);
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .header {
+            text-align: center;
+
+            padding: 35px 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #020806,
+                    #0b3d2e,
+                    #17613f
+                );
+
+            border-bottom: 5px solid #8fbc8f;
+
+            position: relative;
+        }
+
+        .header img {
+            width: 90px;
+            height: 90px;
+
+            object-fit: contain;
+
+            background: white;
+
+            padding: 5px;
+
+            border-radius: 50%;
+
+            margin-bottom: 12px;
+
+            box-shadow:
+                0 6px 20px rgba(0, 0, 0, 0.45);
+
+            transition: 0.3s;
+        }
+
+        .header img:hover {
+            transform: scale(1.08);
+        }
+
+        .header h1 {
+            font-size: 30px;
+
+            letter-spacing: 1px;
+
+            color: #e4f7e9;
+
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-size: 17px;
+
+            color: #9fe3b7;
+
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            font-size: 14px;
+
+            color: #c9e5d1;
+        }
+
+
+        /* ================================
+           MENU
+        ================================= */
+
+        .menu {
+            background: #050d09;
+        }
+
+        .menu ul {
+            list-style: none;
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+        }
+
+        .menu ul li a {
+            display: block;
+
+            padding: 15px 22px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .menu ul li a:hover {
+            background: #2f855a;
+        }
+
+        .menu ul li a i {
+            margin-right: 5px;
+
+            font-size: 18px;
+
+            vertical-align: middle;
+        }
+
+
+        /* ================================
+           CONTENT
+        ================================= */
+
+        .content {
+            padding: 40px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f8fff9,
+                    #e9f5ed
+                );
+        }
+
+
+        /* ================================
+           JUDUL
+        ================================= */
+
+        .judul-artikel {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+        .judul-artikel h2 {
+            color: #123d2b;
+
+            font-size: 28px;
+
+            margin-bottom: 10px;
+        }
+
+        .judul-artikel h2 i {
+            color: #2f855a;
+
+            font-size: 31px;
+
+            vertical-align: middle;
+
+            margin-right: 7px;
+        }
+
+        .judul-artikel p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #557064;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+        .garis {
+            width: 80px;
+
+            height: 4px;
+
+            margin: 18px auto 0;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #0b3d2e,
+                    #55b77c
+                );
+        }
+
+
+        /* ================================
+           GRID ARTIKEL
+        ================================= */
+
+        .artikel-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ================================
+           KARTU ARTIKEL
+        ================================= */
+
+        .artikel-card {
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            border: 1px solid #d9ebe0;
+
+            box-shadow:
+                0 8px 20px rgba(5, 50, 30, 0.12);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .artikel-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 35px rgba(0, 0, 0, 0.20);
+        }
+
+
+        /* ================================
+           GAMBAR
+        ================================= */
+
+        .gambar-artikel {
+            width: 100%;
+
+            height: 220px;
+
+            overflow: hidden;
+
+            position: relative;
+
+            background: #dceee2;
+        }
+
+        .gambar-artikel img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+        .artikel-card:hover
+        .gambar-artikel img {
+            transform: scale(1.07);
+        }
+
+
+        /* ================================
+           LABEL
+        ================================= */
+
+        .label-artikel {
+            position: absolute;
+
+            left: 15px;
+            bottom: 15px;
+
+            padding: 7px 13px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(3, 20, 12, 0.88);
+
+            color: white;
+
+            font-size: 11px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           ISI ARTIKEL
+        ================================= */
+
+        .isi-artikel {
+            padding: 23px;
+        }
+
+        .tanggal {
+            color: #2f855a;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .isi-artikel h3 {
+            color: #163d2d;
+
+            font-size: 21px;
+
+            line-height: 1.4;
+
+            margin-bottom: 10px;
+        }
+
+        .isi-artikel p {
+            color: #5a6c61;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            text-align: justify;
+        }
+
+
+        /* ================================
+           TOMBOL BACA
+        ================================= */
+
+        .btn-baca {
+            display: inline-block;
+
+            margin-top: 17px;
+
+            padding: 10px 17px;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b3d2e,
+                    #2f855a
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn-baca:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 15px
+                rgba(11, 61, 46, 0.3);
+        }
+
+        .btn-baca i {
+            vertical-align: middle;
+
+            margin-left: 4px;
+        }
+
+
+        /* ================================
+           INFORMASI SEKOLAH
+        ================================= */
+
+        .info-sekolah {
+            margin-top: 35px;
+
+            padding: 30px 25px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06120d,
+                    #0b3d2e,
+                    #27784f
+                );
+
+            box-shadow:
+                0 10px 25px
+                rgba(0, 0, 0, 0.20);
+        }
+
+        .info-sekolah i {
+            display: block;
+
+            font-size: 42px;
+
+            color: #a8d5b5;
+
+            margin-bottom: 10px;
+        }
+
+        .info-sekolah h3 {
+            color: #e0f4e5;
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+        .info-sekolah p {
+            color: #cce5d4;
+
+            max-width: 700px;
+
+            margin: auto;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        .footer {
+            text-align: center;
+
+            padding: 20px;
+
+            background: #050d09;
+
+            color: #b8d8c2;
+
+            border-top: 3px solid #2f855a;
+
+            font-size: 13px;
+        }
+
+
+        /* ================================
+           TABLET
+        ================================= */
+
+        @media (max-width: 800px) {
+
+            .content {
+                padding: 30px 25px;
+            }
+
+            .artikel-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* ================================
+           HP
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px 0;
+            }
+
+            .wrap {
+                width: 95%;
+
+                border-radius: 14px;
+            }
+
+            .header {
+                padding: 25px 15px;
+            }
+
+            .header img {
+                width: 75px;
+                height: 75px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .header h2 {
+                font-size: 14px;
+            }
+
+            .header p {
+                font-size: 12px;
+            }
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+            .menu ul li a {
+                text-align: center;
+            }
+
+            .content {
+                padding: 25px 15px;
+            }
+
+            .judul-artikel h2 {
+                font-size: 22px;
+            }
+
+            .gambar-artikel {
+                height: 180px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="wrap">
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header class="header">
+
+        <img
+            src="LOGO.png"
+            alt="Logo SMK Mulia Hati Insani">
+
+        <h1>
+            SMK MULIA HATI INSANI
+        </h1>
+
+        <h2>
+
+            <marquee>
+                SELAMAT DATANG DI SMK MULIA HATI INSANI
+            </marquee>
+
+        </h2>
+
+        <p>
+            Humanis, Edukatif, Bertanggung Jawab,
+            Aktif, Tawakal
+        </p>
+
+    </header>
+
+
+    <!-- ================================
+         MENU
+    ================================= -->
+
+    <nav class="menu">
+
+        <ul>
+
+            <li>
+                <a href="home.html">
+                    <i class="bx bx-home"></i>
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <i class="bx bx-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="jurusan.html">
+                    <i class="bx bx-book"></i>
+                    Jurusan
+                </a>
+            </li>
+
+            <li>
+                <a href="artikel.html">
+                    <i class="bx bx-news"></i>
+                    Artikel
+                </a>
+            </li>
+
+            <li>
+                <a href="kontak.html">
+                    <i class="bx bx-phone"></i>
+                    Kontak
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    <i class="bx bx-log-in"></i>
+                    Login
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================================
+         CONTENT
+    ================================= -->
+
+    <main class="content">
+
+
+        <!-- JUDUL -->
+
+        <div class="judul-artikel">
+
+            <h2>
+                <i class="bx bx-news"></i>
+                ARTIKEL SMK MULIA HATI INSANI
+            </h2>
+
+            <p>
+                Informasi dan berita terbaru seputar
+                kegiatan, pembelajaran, prestasi,
+                dan perkembangan SMK Mulia Hati Insani.
+            </p>
+
+            <div class="garis"></div>
+
+        </div>
+
+
+        <!-- ================================
+             ARTIKEL
+        ================================= -->
+
+        <div class="artikel-container">
+
+
+            <!-- ARTIKEL 1 -->
+
+            <article class="artikel-card">
+
+                <div class="gambar-artikel">
+
+                    <img
+                        src="kegiatan.jpg"
+                        alt="Kegiatan Sekolah SMK Mulia Hati Insani">
+
+                    <span class="label-artikel">
+                        KEGIATAN SEKOLAH
+                    </span>
+
+                </div>
+
+                <div class="isi-artikel">
+
+                    <div class="tanggal">
+                        <i class="bx bx-calendar"></i>
+                        2026
+                    </div>
+
+                    <h3>
+                        Kegiatan Sekolah Membangun
+                        Karakter Siswa
+                    </h3>
+
+                    <p>
+                        SMK Mulia Hati Insani terus mendorong
+                        siswa untuk aktif mengikuti berbagai
+                        kegiatan sekolah. Melalui kegiatan
+                        tersebut, siswa dapat belajar mengenai
+                        kerja sama, kedisiplinan, tanggung
+                        jawab, dan kepemimpinan.
+                    </p>
+
+                    <a href="#" class="btn-baca">
+                        Baca Selengkapnya
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTIKEL 2 -->
+
+            <article class="artikel-card">
+
+                <div class="gambar-artikel">
+
+                    <img
+                        src="pembelajaran.jpg"
+                        alt="Pembelajaran SMK Mulia Hati Insani">
+
+                    <span class="label-artikel">
+                        PENDIDIKAN
+                    </span>
+
+                </div>
+
+                <div class="isi-artikel">
+
+                    <div class="tanggal">
+                        <i class="bx bx-calendar"></i>
+                        2026
+                    </div>
+
+                    <h3>
+                        Pembelajaran Kreatif dan
+                        Edukatif di Sekolah
+                    </h3>
+
+                    <p>
+                        Proses pembelajaran di SMK Mulia Hati
+                        Insani diarahkan agar siswa tidak hanya
+                        memahami teori, tetapi juga mampu
+                        mengembangkan keterampilan dan
+                        kreativitas sesuai dengan bidang
+                        yang dipelajari.
+                    </p>
+
+                    <a href="#" class="btn-baca">
+                        Baca Selengkapnya
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTIKEL 3 -->
+
+            <article class="artikel-card">
+
+                <div class="gambar-artikel">
+
+                    <img
+                        src="prestasi.webp"
+                        alt="Prestasi Siswa SMK Mulia Hati Insani">
+
+                    <span class="label-artikel">
+                        PRESTASI
+                    </span>
+
+                </div>
+
+                <div class="isi-artikel">
+
+                    <div class="tanggal">
+                        <i class="bx bx-calendar"></i>
+                        2026
+                    </div>
+
+                    <h3>
+                        Mengembangkan Potensi dan
+                        Prestasi Siswa
+                    </h3>
+
+                    <p>
+                        Setiap siswa memiliki potensi yang
+                        berbeda. Sekolah memberikan ruang
+                        bagi siswa untuk mengembangkan bakat
+                        melalui pembelajaran, organisasi,
+                        ekstrakurikuler, dan berbagai kegiatan
+                        positif lainnya.
+                    </p>
+
+                    <a href="#" class="btn-baca">
+                        Baca Selengkapnya
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTIKEL 4 -->
+
+            <article class="artikel-card">
+
+                <div class="gambar-artikel">
+
+                    <img
+                        src="lingkungan.jpg"
+                        alt="Lingkungan Sekolah">
+
+                    <span class="label-artikel">
+                        LINGKUNGAN
+                    </span>
+
+                </div>
+
+                <div class="isi-artikel">
+
+                    <div class="tanggal">
+                        <i class="bx bx-calendar"></i>
+                        2026
+                    </div>
+
+                    <h3>
+                        Menciptakan Lingkungan Sekolah
+                        yang Nyaman
+                    </h3>
+
+                    <p>
+                        Lingkungan sekolah yang bersih,
+                        nyaman, dan tertib menjadi bagian
+                        penting dalam mendukung kegiatan
+                        belajar. Seluruh warga sekolah
+                        diharapkan ikut menjaga kebersihan
+                        dan kenyamanan lingkungan.
+                    </p>
+
+                    <a href="#" class="btn-baca">
+                        Baca Selengkapnya
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- ================================
+             INFO SEKOLAH
+        ================================= -->
+
+        <section class="info-sekolah">
+
+            <i class="bx bx-bulb"></i>
+
+            <h3>
+                Terus Belajar dan Berkembang
+            </h3>
+
+            <p>
+                SMK Mulia Hati Insani berkomitmen
+                memberikan lingkungan pendidikan yang
+                humanis dan edukatif agar siswa dapat
+                mengembangkan pengetahuan, keterampilan,
+                karakter, serta potensi yang dimiliki.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="footer">
+
+        <p>
+            &copy; 2026 SMK MULIA HATI INSANI
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>
+```

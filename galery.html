@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeri - SMK Mulia Hati Insani</title>
+
+    <!-- BOXICONS -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet">
+
+    <style>
+
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* ================================
+           BODY
+        ================================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06120d,
+                    #0b3d2e,
+                    #2f855a,
+                    #a8cdb5
+                );
+
+            min-height: 100vh;
+
+            padding: 25px 0;
+
+            color: #333;
+        }
+
+
+        /* ================================
+           WRAP
+        ================================= */
+
+        .wrap {
+            width: 92%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            background: #f7fff9;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, 0.35);
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .header {
+            text-align: center;
+
+            padding: 35px 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #020806,
+                    #0b3d2e,
+                    #17613f
+                );
+
+            border-bottom: 5px solid #8fbc8f;
+        }
+
+
+        .header img {
+            width: 90px;
+            height: 90px;
+
+            object-fit: contain;
+
+            background: white;
+
+            padding: 5px;
+
+            border-radius: 50%;
+
+            margin-bottom: 12px;
+
+            box-shadow:
+                0 6px 20px rgba(0, 0, 0, 0.45);
+
+            transition: 0.3s;
+        }
+
+
+        .header img:hover {
+            transform: scale(1.08) rotate(3deg);
+        }
+
+
+        .header h1 {
+            font-size: 30px;
+
+            letter-spacing: 1px;
+
+            color: #e4f7e9;
+
+            margin-bottom: 10px;
+        }
+
+
+        .header h2 {
+            font-size: 17px;
+
+            color: #9fe3b7;
+
+            margin-bottom: 12px;
+        }
+
+
+        .header p {
+            font-size: 14px;
+
+            color: #c9e5d1;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* ================================
+           MENU
+        ================================= */
+
+        .menu {
+            background: #050d09;
+        }
+
+
+        .menu ul {
+            list-style: none;
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+        }
+
+
+        .menu ul li a {
+            display: block;
+
+            padding: 15px 20px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .menu ul li a:hover {
+            background: #2f855a;
+        }
+
+
+        .menu ul li a i {
+            margin-right: 5px;
+
+            font-size: 18px;
+
+            vertical-align: middle;
+        }
+
+
+        /* MENU AKTIF */
+
+        .menu ul li a.aktif {
+            background: #2f855a;
+        }
+
+
+        /* ================================
+           BADAN
+        ================================= */
+
+        .badan {
+            display: flex;
+
+            background: #eef8f1;
+        }
+
+
+        /* ================================
+           SIDEBAR
+        ================================= */
+
+        .sidebar {
+            width: 220px;
+
+            padding: 25px 15px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #0b3d2e,
+                    #071a12
+                );
+        }
+
+
+        .sidebar h3 {
+            color: #d9f2df;
+
+            text-align: center;
+
+            margin-bottom: 18px;
+
+            font-size: 16px;
+        }
+
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+
+        .sidebar ul li {
+            margin-bottom: 8px;
+        }
+
+
+        .sidebar ul li a {
+            display: block;
+
+            padding: 12px 15px;
+
+            color: #cce5d4;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+
+        .sidebar ul li a:hover {
+            background: #2f855a;
+
+            color: white;
+
+            padding-left: 20px;
+        }
+
+
+        .sidebar ul li a.aktif {
+            background: #2f855a;
+
+            color: white;
+        }
+
+
+        .sidebar ul li a i {
+            margin-right: 8px;
+
+            font-size: 18px;
+
+            vertical-align: middle;
+        }
+
+
+        /* ================================
+           CONTENT
+        ================================= */
+
+        .content {
+            flex: 1;
+
+            padding: 40px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f8fff9,
+                    #e9f5ed
+                );
+        }
+
+
+        /* ================================
+           JUDUL
+        ================================= */
+
+        .judul-galeri {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+
+        .judul-galeri h2 {
+            color: #123d2b;
+
+            font-size: 28px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .judul-galeri h2 i {
+            color: #2f855a;
+
+            font-size: 32px;
+
+            vertical-align: middle;
+
+            margin-right: 7px;
+        }
+
+
+        .judul-galeri p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #557064;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        .garis {
+            width: 80px;
+
+            height: 4px;
+
+            margin: 18px auto 0;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #0b3d2e,
+                    #55b77c
+                );
+        }
+
+
+        /* ================================
+           GALERI
+        ================================= */
+
+        .galeri-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* ================================
+           KARTU FOTO
+        ================================= */
+
+        .foto-card {
+            background: white;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            border: 1px solid #d9ebe0;
+
+            box-shadow:
+                0 8px 20px rgba(5, 50, 30, 0.12);
+
+            transition: 0.3s;
+
+            position: relative;
+        }
+
+
+        .foto-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 35px rgba(0, 0, 0, 0.20);
+        }
+
+
+        /* ================================
+           FOTO
+        ================================= */
+
+        .foto {
+            width: 100%;
+
+            height: 190px;
+
+            overflow: hidden;
+
+            position: relative;
+
+            background: #dceee2;
+        }
+
+
+        .foto img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: 0.5s;
+        }
+
+
+        .foto-card:hover .foto img {
+            transform: scale(1.1);
+        }
+
+
+        /* ================================
+           ICON FOTO
+        ================================= */
+
+        .icon-foto {
+            position: absolute;
+
+            top: 12px;
+
+            right: 12px;
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(3, 20, 12, 0.85);
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+        }
+
+
+        /* ================================
+           LABEL
+        ================================= */
+
+        .label-foto {
+            position: absolute;
+
+            bottom: 10px;
+
+            left: 10px;
+
+            padding: 6px 12px;
+
+            background:
+                rgba(3, 20, 12, 0.88);
+
+            color: white;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            border-radius: 20px;
+        }
+
+
+        /* ================================
+           ISI FOTO
+        ================================= */
+
+        .isi-foto {
+            padding: 17px;
+
+            text-align: center;
+        }
+
+
+        .isi-foto h3 {
+            color: #163d2d;
+
+            font-size: 18px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .isi-foto p {
+            color: #607168;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================================
+           INFO
+        ================================= */
+
+        .info-galeri {
+            margin-top: 35px;
+
+            padding: 30px 25px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06120d,
+                    #0b3d2e,
+                    #27784f
+                );
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.20);
+        }
+
+
+        .info-galeri i {
+            display: block;
+
+            font-size: 42px;
+
+            color: #a8d5b5;
+
+            margin-bottom: 10px;
+        }
+
+
+        .info-galeri h3 {
+            color: #e0f4e5;
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .info-galeri p {
+            color: #cce5d4;
+
+            max-width: 700px;
+
+            margin: auto;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        .footer {
+            text-align: center;
+
+            padding: 20px;
+
+            background: #050d09;
+
+            color: #b8d8c2;
+
+            border-top: 3px solid #2f855a;
+
+            font-size: 13px;
+        }
+
+
+        /* ================================
+           TABLET
+        ================================= */
+
+        @media (max-width: 850px) {
+
+            .content {
+                padding: 30px 25px;
+            }
+
+            .galeri-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* ================================
+           HP
+        ================================= */
+
+        @media (max-width: 650px) {
+
+            body {
+                padding: 10px 0;
+            }
+
+
+            .wrap {
+                width: 95%;
+
+                border-radius: 14px;
+            }
+
+
+            .header {
+                padding: 25px 15px;
+            }
+
+
+            .header img {
+                width: 75px;
+                height: 75px;
+            }
+
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+
+            .header h2 {
+                font-size: 14px;
+            }
+
+
+            .header p {
+                font-size: 12px;
+            }
+
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+
+            .menu ul li a {
+                text-align: center;
+            }
+
+
+            .badan {
+                display: block;
+            }
+
+
+            .sidebar {
+                width: 100%;
+            }
+
+
+            .sidebar ul {
+                display: grid;
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 8px;
+            }
+
+
+            .content {
+                padding: 25px 15px;
+            }
+
+
+            .judul-galeri h2 {
+                font-size: 22px;
+            }
+
+
+            .galeri-container {
+                grid-template-columns: 1fr;
+            }
+
+
+            .foto {
+                height: 210px;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .sidebar ul {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="wrap">
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header class="header">
+
+        <img
+            src="LOGO.png"
+            alt="Logo SMK Mulia Hati Insani">
+
+        <h1>
+            SMK MULIA HATI INSANI
+        </h1>
+
+        <h2>
+            <marquee>
+                SELAMAT DATANG DI SMK MULIA HATI INSANI
+            </marquee>
+        </h2>
+
+        <p>
+            Humanis, Edukatif, Bertanggung Jawab,
+            Aktif, Tawakal
+        </p>
+
+    </header>
+
+
+    <!-- ================================
+         MENU
+    ================================= -->
+
+    <nav class="menu">
+
+        <ul>
+
+            <li>
+                <a href="home.html">
+                    <i class="bx bx-home"></i>
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <i class="bx bx-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="jurusan.html">
+                    <i class="bx bx-book"></i>
+                    Jurusan
+                </a>
+            </li>
+
+          
+
+            <li>
+                <a href="artikel.html">
+                    <i class="bx bx-news"></i>
+                    Artikel
+                </a>
+            </li>
+
+            <li>
+                <a href="kontak.html">
+                    <i class="bx bx-phone"></i>
+                    Kontak
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    <i class="bx bx-log-in"></i>
+                    Login
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================================
+         BADAN
+    ================================= -->
+
+    <div class="badan">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <h3>
+                MENU INFORMASI
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="artikel.html">
+                        <i class="bx bx-news"></i>
+                        Artikel
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="galery.html"
+                        class="aktif">
+                        <i class="bx bx-image"></i>
+                        Galeri Foto
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+
+        <main class="content">
+
+
+            <!-- JUDUL -->
+
+            <div class="judul-galeri">
+
+                <h2>
+                    <i class="bx bx-images"></i>
+                    GALERI SMK MULIA HATI INSANI
+                </h2>
+
+                <p>
+                    Dokumentasi berbagai kegiatan dan
+                    aktivitas siswa SMK Mulia Hati Insani
+                    dalam bidang pendidikan,
+                    ekstrakurikuler, organisasi,
+                    dan kegiatan sekolah.
+                </p>
+
+                <div class="garis"></div>
+
+            </div>
+
+
+            <!-- ================================
+                 GALERI FOTO
+            ================================= -->
+
+            <div class="galeri-container">
+
+
+                <!-- FOTO 1 -->
+
+                <article class="foto-card">
+
+                    <div class="foto">
+
+                        <img
+                            src="kegiatan.jpg"
+                            alt="Kegiatan Sekolah">
+
+                        <div class="icon-foto">
+                            <i class="bx bx-camera"></i>
+                        </div>
+
+                        <span class="label-foto">
+                            KEGIATAN SEKOLAH
+                        </span>
+
+                    </div>
+
+                    <div class="isi-foto">
+
+                        <h3>
+                            Kegiatan Sekolah
+                        </h3>
+
+                        <p>
+                            Dokumentasi kegiatan siswa
+                            bersama warga sekolah.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FOTO 2 -->
+
+                <article class="foto-card">
+
+                    <div class="foto">
+
+                        <img
+                            src="pramuka.jpg"
+                            alt="Kegiatan Pramuka">
+
+                        <div class="icon-foto">
+                            <i class="bx bx-compass"></i>
+                        </div>
+
+                        <span class="label-foto">
+                            PRAMUKA
+                        </span>
+
+                    </div>
+
+                    <div class="isi-foto">
+
+                        <h3>
+                            Kegiatan Pramuka
+                        </h3>
+
+                        <p>
+                            Kegiatan pramuka untuk melatih
+                            kedisiplinan dan kepemimpinan.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FOTO 3 -->
+
+                <article class="foto-card">
+
+                    <div class="foto">
+
+                        <img
+                            src="paskib.jpg"
+                            alt="Kegiatan Paskibra">
+
+                        <div class="icon-foto">
+                            <i class="bx bx-flag"></i>
+                        </div>
+
+                        <span class="label-foto">
+                            PASKIBRA
+                        </span>
+
+                    </div>
+
+                    <div class="isi-foto">
+
+                        <h3>
+                            Kegiatan Paskibra
+                        </h3>
+
+                        <p>
+                            Latihan kekompakan, disiplin,
+                            dan cinta tanah air.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FOTO 5 -->
+
+                <article class="foto-card">
+
+                    <div class="foto">
+
+                        <img
+                            src="pmr.jpg"
+                            alt="Kegiatan PMR">
+
+                        <div class="icon-foto">
+                            <i class="bx bx-plus-medical"></i>
+                        </div>
+
+                        <span class="label-foto">
+                            PMR
+                        </span>
+
+                    </div>
+
+                    <div class="isi-foto">
+
+                        <h3>
+                            Palang Merah Remaja
+                        </h3>
+
+                        <p>
+                            Kegiatan kesehatan dan
+                            kepedulian terhadap sesama.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FOTO 6 -->
+
+                <article class="foto-card">
+
+                    <div class="foto">
+
+                        <img
+                            src="ngaji.jpg"
+                            alt="Kegiatan Rohis">
+
+                        <div class="icon-foto">
+                            <i class="bx bx-book-heart"></i>
+                        </div>
+
+                        <span class="label-foto">
+                            ROHIS
+                        </span>
+
+                    </div>
+
+                    <div class="isi-foto">
+
+                        <h3>
+                            Kegiatan Rohis
+                        </h3>
+
+                        <p>
+                            Kegiatan pembinaan keagamaan
+                            dan akhlak siswa.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FOTO 7 -->
+
+                <article class="foto-card">
+
+                    <div class="foto">
+
+                        <img
+                            src="tari.jpg"
+                            alt="Kegiatan Seni">
+
+                        <div class="icon-foto">
+                            <i class="bx bx-palette"></i>
+                        </div>
+
+                        <span class="label-foto">
+                            SENI
+                        </span>
+
+                    </div>
+
+                    <div class="isi-foto">
+
+                        <h3>
+                            Seni & Kreativitas
+                        </h3>
+
+                        <p>
+                            Wadah siswa untuk mengembangkan
+                            kreativitas dan bakat seni.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FOTO 8 -->
+
+                <article class="foto-card">
+
+                    <div class="foto">
+
+                        <img
+                            src="halamn.jpg"
+                            alt="Lingkungan Sekolah">
+
+                        <div class="icon-foto">
+                            <i class="bx bx-building-house"></i>
+                        </div>
+
+                        <span class="label-foto">
+                            SEKOLAH
+                        </span>
+
+                    </div>
+
+                    <div class="isi-foto">
+
+                        <h3>
+                            Lingkungan Sekolah
+                        </h3>
+
+                        <p>
+                            Suasana lingkungan SMK Mulia
+                            Hati Insani.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FOTO 9 -->
+
+                <article class="foto-card">
+
+                    <div class="foto">
+
+                        <img
+                            src="pembelajaran.jpg"
+                            alt="Kegiatan Pembelajaran">
+
+                        <div class="icon-foto">
+                            <i class="bx bx-book-open"></i>
+                        </div>
+
+                        <span class="label-foto">
+                            PEMBELAJARAN
+                        </span>
+
+                    </div>
+
+                    <div class="isi-foto">
+
+                        <h3>
+                            Pembelajaran
+                        </h3>
+
+                        <p>
+                            Dokumentasi kegiatan belajar
+                            siswa di sekolah.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- ================================
+                 INFO
+            ================================= -->
+
+            <section class="info-galeri">
+
+                <i class="bx bx-camera"></i>
+
+                <h3>
+                    Dokumentasi Kegiatan Sekolah
+                </h3>
+
+                <p>
+                    Galeri ini menjadi tempat untuk
+                    menyimpan berbagai dokumentasi
+                    kegiatan SMK Mulia Hati Insani.
+                    Setiap kegiatan menjadi bagian
+                    dari pengalaman dan perjalanan
+                    siswa dalam mengembangkan potensi,
+                    kreativitas, dan karakter.
+                </p>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="footer">
+
+        <p>
+            &copy; 2026 SMK MULIA HATI INSANI
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>

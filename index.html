@@ -1,0 +1,780 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - SMK MULIA HATI INSANI</title>
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #071a12,
+                #0b3d2e,
+                #1f6f50,
+                #8fbc8f
+            );
+
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .wrap {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+
+            background: #f8fff9;
+
+            border-radius: 15px;
+            overflow: hidden;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        /* HEADER */
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #06150f,
+                #0b3d2e,
+                #145a3d
+            );
+
+            border-bottom: 5px solid #8fbc8f;
+        }
+
+        .header img {
+            width: 90px;
+            height: 90px;
+
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+
+            margin-bottom: 10px;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #d9f2df;
+        }
+
+        .header h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #9fe3b7;
+        }
+
+        .header p {
+            font-size: 15px;
+            color: #c8e6cf;
+        }
+
+        /* MENU */
+
+        .menu {
+            background: #050d09;
+        }
+
+        .menu ul {
+            list-style: none;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .menu ul li a {
+            display: block;
+
+            padding: 16px 25px;
+
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .menu ul li a:hover {
+            background: #2f855a;
+        }
+
+        /* LOGOUT */
+
+        .menu .logout a {
+            background: #8b1e1e;
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        .menu .logout a:hover {
+            background: #c62828;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 15px rgba(198, 40, 40, 0.4);
+        }
+
+        .menu .logout a i {
+            margin-right: 6px;
+            font-size: 18px;
+            vertical-align: middle;
+        }
+
+        /* BADAN */
+
+        .badan {
+            display: flex;
+            background: #eef8f1;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: 220px;
+            padding: 25px 15px;
+
+            background: linear-gradient(
+                180deg,
+                #0b3d2e,
+                #071a12
+            );
+        }
+
+        .sidebar h3 {
+            color: #d9f2df;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 8px;
+        }
+
+        .sidebar ul li a {
+            display: block;
+
+            padding: 12px 15px;
+
+            color: #cce5d4;
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background: #2f855a;
+            color: white;
+
+            padding-left: 20px;
+        }
+
+        .sidebar ul li a i {
+            margin-right: 8px;
+
+            font-size: 18px;
+            vertical-align: middle;
+        }
+
+        /* CONTENT */
+
+        .content {
+            flex: 1;
+
+            min-height: 500px;
+
+            padding: 40px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                180deg,
+                #f8fff9,
+                #eaf6ed
+            );
+        }
+
+        /* LOGIN BOX */
+
+        .login-box {
+            width: 100%;
+            max-width: 420px;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            border-top: 5px solid #2f855a;
+
+            box-shadow:
+                0 10px 30px rgba(5, 50, 30, 0.18);
+
+            text-align: center;
+        }
+
+        .login-icon {
+            width: 80px;
+            height: 80px;
+
+            margin: 0 auto 15px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            color: white;
+
+            font-size: 40px;
+
+            background: linear-gradient(
+                135deg,
+                #0b3d2e,
+                #3c9d68
+            );
+
+            box-shadow:
+                0 5px 15px rgba(0, 60, 35, 0.25);
+        }
+
+        .login-box h2 {
+            color: #123d2b;
+
+            font-size: 26px;
+
+            margin-bottom: 8px;
+        }
+
+        .subjudul {
+            color: #65786d;
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+        /* INPUT */
+
+        .input-group {
+            position: relative;
+
+            margin-bottom: 18px;
+
+            text-align: left;
+        }
+
+        .input-group i {
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #2f855a;
+
+            font-size: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+
+            padding: 14px 15px 14px 45px;
+
+            border: 1px solid #cfe2d5;
+
+            border-radius: 10px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            color: #333;
+
+            background: #f9fffa;
+
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #2f855a;
+
+            box-shadow:
+                0 0 0 3px rgba(47, 133, 90, 0.12);
+        }
+
+        /* BUTTON LOGIN */
+
+        .btn-login {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                135deg,
+                #0b3d2e,
+                #2f855a
+            );
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            margin-top: 5px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 7px 15px rgba(11, 61, 46, 0.3);
+        }
+
+        .btn-login i {
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        /* PESAN */
+
+        #pesan {
+            margin-top: 15px;
+
+            color: #d32f2f;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        /* FOOTER LOGIN */
+
+        .login-footer {
+            margin-top: 20px;
+
+            font-size: 13px;
+
+            color: #66786e;
+        }
+
+        .login-footer a {
+            color: #23804e;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background: #050d09;
+
+            color: #b8d8c2;
+
+            text-align: center;
+
+            padding: 18px;
+
+            border-top: 3px solid #2f855a;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 750px) {
+
+            .wrap {
+                width: 95%;
+                margin: 15px auto;
+            }
+
+            .badan {
+                display: block;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .sidebar ul {
+                display: grid;
+
+                grid-template-columns: 1fr 1fr;
+
+                gap: 8px;
+            }
+
+            .content {
+                padding: 25px 15px;
+
+                min-height: 450px;
+            }
+
+            .header h1 {
+                font-size: 23px;
+            }
+
+            .header h2 {
+                font-size: 15px;
+            }
+
+            .menu ul li a {
+                padding: 12px 15px;
+
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .sidebar ul {
+                grid-template-columns: 1fr;
+            }
+
+            .login-box {
+                padding: 25px 20px;
+            }
+
+            .login-box h2 {
+                font-size: 22px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <img
+                src="LOGO.png"
+                alt="Logo SMK Mulia Hati Insani">
+
+            <h1>
+                SMK MULIA HATI INSANI
+            </h1>
+
+            <h2>
+                <marquee>
+                    SELAMAT DATANG DI SMK MULIA HATI INSANI
+                </marquee>
+            </h2>
+
+            <p>
+                Humanis, Edukatif, Bertanggung Jawab,
+                Aktif, Tawakal
+            </p>
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <div class="menu">
+
+            <ul>
+
+                <li>
+                    <a href="home.html">
+                        <i class="bx bx-home"></i>
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        <i class="bx bx-user"></i>
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="jurusan.html">
+                        <i class="bx bx-book"></i>
+                        Jurusan
+                    </a>
+                </li>
+
+                <li>
+                    <a href="kontak.html">
+                        <i class="bx bx-phone"></i>
+                        Kontak
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.html">
+                        <i class="bx bx-log-in"></i>
+                        Login
+                    </a>
+                </li>
+
+                <!-- LOGOUT -->
+                <li class="logout">
+                    <a href="#" onclick="logoutUser(); return false;">
+                        <i class="bx bx-log-out"></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- BADAN -->
+
+        <div class="badan">
+
+            <!-- SIDEBAR -->
+
+            <div class="sidebar">
+
+                <h3>
+                    MENU INFORMASI
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="artikel.html">
+                            <i class="bx bx-news"></i>
+                            Artikel
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="galery.html">
+                            <i class="bx bx-image"></i>
+                            Galery Foto
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+            <!-- FORM LOGIN -->
+
+            <div class="content">
+
+                <div class="login-box">
+
+                    <div class="login-icon">
+                        <i class="bx bx-user"></i>
+                    </div>
+
+                    <h2>LOGIN</h2>
+
+                    <p class="subjudul">
+                        Silakan login untuk masuk ke Dashboard
+                    </p>
+
+                    <!-- FORM -->
+
+                    <form onsubmit="loginUser(event)">
+
+                        <div class="input-group">
+
+                            <i class="bx bx-user"></i>
+
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="Username"
+                                required>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <i class="bx bx-lock-alt"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Password"
+                                required>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn-login">
+
+                            <i class="bx bx-log-in"></i>
+                            Login
+
+                        </button>
+
+                    </form>
+
+                    <div id="pesan"></div>
+
+                    <div class="login-footer">
+
+                        Belum mempunyai akun?
+
+                        <a href="daftar.html">
+                            Daftar Sekarang
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <p>
+                &copy; 2026 SMK MULIA HATI INSANI
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // =========================
+        // LOGIN
+        // =========================
+
+        function loginUser(event) {
+
+            event.preventDefault();
+
+            const username =
+                document.getElementById("username").value;
+
+            const password =
+                document.getElementById("password").value;
+
+            const pesan =
+                document.getElementById("pesan");
+
+            if (
+                username === "admin" &&
+                password === "12345"
+            ) {
+
+                // Simpan status login
+                localStorage.setItem("login", "true");
+
+                // Simpan username
+                localStorage.setItem("username", username);
+
+                // Masuk ke Dashboard
+                window.location.href = "dashboard.html";
+
+            } else {
+
+                pesan.innerHTML =
+                    "Username atau password salah!";
+
+            }
+
+        }
+
+
+        // =========================
+        // LOGOUT
+        // =========================
+
+        function logoutUser() {
+
+            const yakin = confirm(
+                "Apakah kamu yakin ingin Logout?"
+            );
+
+            if (yakin) {
+
+                // Hapus data login
+                localStorage.removeItem("login");
+                localStorage.removeItem("username");
+
+                // Pindah ke halaman login
+                window.location.href = "login.html";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```

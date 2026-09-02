@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ekstrakurikuler - SMK Mulia Hati Insani</title>
+
+<!-- Boxicons -->
+<link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet">
+
+<style>
+
+    /* ==================================================
+       RESET
+    ================================================== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* ==================================================
+       BODY
+    ================================================== */
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+
+        background:
+            linear-gradient(
+                135deg,
+                #06120d,
+                #0b3d2e,
+                #2f855a,
+                #a8cdb5
+            );
+
+        min-height: 100vh;
+
+        padding: 25px 0;
+
+        color: #333;
+    }
+
+
+    /* ==================================================
+       WRAP
+    ================================================== */
+
+    .wrap {
+        width: 92%;
+        max-width: 1100px;
+
+        margin: auto;
+
+        background: #f7fff9;
+
+        border-radius: 20px;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+
+
+    /* ==================================================
+       HEADER
+    ================================================== */
+
+    .header {
+        text-align: center;
+
+        padding: 35px 20px;
+
+        color: white;
+
+        background:
+            linear-gradient(
+                135deg,
+                #020806,
+                #0b3d2e,
+                #17613f
+            );
+
+        border-bottom: 5px solid #8fbc8f;
+
+        position: relative;
+    }
+
+
+    .header::after {
+        content: "";
+
+        position: absolute;
+
+        bottom: -5px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 120px;
+        height: 5px;
+
+        background: #b7e4c7;
+    }
+
+
+    /* ==================================================
+       LOGO
+    ================================================== */
+
+    .header img {
+        width: 90px;
+        height: 90px;
+
+        object-fit: contain;
+
+        background: white;
+
+        padding: 5px;
+
+        border-radius: 50%;
+
+        margin-bottom: 12px;
+
+        box-shadow:
+            0 6px 20px rgba(0, 0, 0, 0.45);
+
+        transition: 0.3s;
+    }
+
+
+    .header img:hover {
+        transform: scale(1.08) rotate(3deg);
+    }
+
+
+    /* ==================================================
+       JUDUL
+    ================================================== */
+
+    .header h1 {
+        font-size: 30px;
+
+        letter-spacing: 1px;
+
+        color: #e4f7e9;
+
+        margin-bottom: 10px;
+    }
+
+
+    .header h2 {
+        font-size: 17px;
+
+        color: #9fe3b7;
+
+        margin-bottom: 12px;
+    }
+
+
+    .header p {
+        font-size: 14px;
+
+        color: #c9e5d1;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    /* ==================================================
+       CONTENT
+    ================================================== */
+
+    .content {
+        padding: 40px;
+
+        background:
+            linear-gradient(
+                180deg,
+                #f8fff9,
+                #e9f5ed
+            );
+    }
+
+
+    /* ==================================================
+       JUDUL HALAMAN
+    ================================================== */
+
+    .judul-ekskul {
+        text-align: center;
+
+        margin-bottom: 35px;
+    }
+
+
+    .judul-ekskul h2 {
+        color: #123d2b;
+
+        font-size: 27px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .judul-ekskul h2 i {
+        color: #2f855a;
+
+        font-size: 30px;
+
+        vertical-align: middle;
+
+        margin-right: 7px;
+    }
+
+
+    .judul-ekskul p {
+        max-width: 700px;
+
+        margin: auto;
+
+        color: #557064;
+
+        line-height: 1.7;
+
+        font-size: 15px;
+    }
+
+
+    /* ==================================================
+       GARIS HIJAU
+    ================================================== */
+
+    .garis {
+        width: 80px;
+
+        height: 4px;
+
+        margin: 18px auto 0;
+
+        border-radius: 20px;
+
+        background:
+            linear-gradient(
+                90deg,
+                #0b3d2e,
+                #55b77c
+            );
+    }
+
+
+    /* ==================================================
+       GRID EKSTRAKURIKULER
+    ================================================== */
+
+    .ekskul-container {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 25px;
+    }
+
+
+    /* ==================================================
+       KARTU EKSTRAKURIKULER
+    ================================================== */
+
+    .ekskul-card {
+        background: white;
+
+        border-radius: 18px;
+
+        overflow: hidden;
+
+        border: 1px solid #d9ebe0;
+
+        border-top: 5px solid #268653;
+
+        box-shadow:
+            0 8px 20px rgba(5, 50, 30, 0.12);
+
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+
+        position: relative;
+    }
+
+
+    .ekskul-card:hover {
+        transform: translateY(-10px);
+
+        box-shadow:
+            0 18px 35px rgba(0, 0, 0, 0.20);
+
+        border-top-color: #0b3d2e;
+    }
+
+
+    /* ==================================================
+       FOTO EKSTRAKURIKULER
+    ================================================== */
+
+    .foto-ekskul {
+        width: 100%;
+
+        height: 140px;
+
+        overflow: hidden;
+
+        position: relative;
+
+        background: #dceee2;
+    }
+
+
+    .foto-ekskul img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        display: block;
+
+        transition:
+            transform 0.5s ease;
+    }
+
+
+    .ekskul-card:hover
+    .foto-ekskul img {
+        transform: scale(1.08);
+    }
+
+
+    /* ==================================================
+       LABEL FOTO
+    ================================================== */
+
+    .label-foto {
+        position: absolute;
+
+        bottom: 10px;
+        left: 10px;
+
+        padding: 6px 12px;
+
+        background:
+            rgba(3, 20, 12, 0.88);
+
+        color: white;
+
+        font-size: 11px;
+
+        font-weight: bold;
+
+        border-radius: 20px;
+
+        backdrop-filter: blur(4px);
+    }
+
+
+    /* ==================================================
+       ISI KARTU
+    ================================================== */
+
+    .isi-ekskul {
+        padding: 20px;
+
+        text-align: center;
+    }
+
+
+    /* ==================================================
+       ICON
+    ================================================== */
+
+    .icon-ekskul {
+        width: 60px;
+        height: 60px;
+
+        margin: -48px auto 13px;
+
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background:
+            linear-gradient(
+                135deg,
+                #0b3d2e,
+                #45a66e
+            );
+
+        border: 5px solid white;
+
+        color: white;
+
+        font-size: 29px;
+
+        box-shadow:
+            0 6px 15px rgba(0, 60, 35, 0.28);
+    }
+
+
+    /* ==================================================
+       NAMA EKSKUL
+    ================================================== */
+
+    .ekskul-card h3 {
+        color: #163d2d;
+
+        font-size: 21px;
+
+        margin-bottom: 8px;
+    }
+
+
+    /* ==================================================
+       KATEGORI
+    ================================================== */
+
+    .kategori {
+        color: #23804e;
+
+        font-weight: bold;
+
+        font-size: 12px;
+
+        line-height: 1.5;
+
+        margin-bottom: 13px;
+    }
+
+
+    /* ==================================================
+       DESKRIPSI
+    ================================================== */
+
+    .ekskul-card p {
+        color: #5a6c61;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+        text-align: justify;
+    }
+
+
+    /* ==================================================
+       LABEL
+    ================================================== */
+
+    .label-ekskul {
+        display: inline-block;
+
+        margin-top: 17px;
+
+        padding: 7px 14px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #e1f2e6,
+                #ccebd6
+            );
+
+        color: #217447;
+
+        border-radius: 20px;
+
+        font-size: 10px;
+
+        font-weight: bold;
+
+        letter-spacing: 0.7px;
+    }
+
+
+    /* ==================================================
+       INFO BAWAH
+    ================================================== */
+
+    .info-ekskul {
+        margin-top: 35px;
+
+        padding: 30px 25px;
+
+        text-align: center;
+
+        border-radius: 18px;
+
+        color: white;
+
+        background:
+            linear-gradient(
+                135deg,
+                #06120d,
+                #0b3d2e,
+                #27784f
+            );
+
+        box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.20);
+
+        position: relative;
+
+        overflow: hidden;
+    }
+
+
+    .info-ekskul::before {
+        content: "";
+
+        position: absolute;
+
+        width: 150px;
+        height: 150px;
+
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.05);
+
+        top: -70px;
+        right: -50px;
+    }
+
+
+    .info-ekskul i {
+        display: block;
+
+        font-size: 42px;
+
+        color: #a8d5b5;
+
+        margin-bottom: 10px;
+    }
+
+
+    .info-ekskul h3 {
+        color: #e0f4e5;
+
+        font-size: 21px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .info-ekskul p {
+        color: #cce5d4;
+
+        line-height: 1.7;
+
+        font-size: 14px;
+
+        max-width: 650px;
+
+        margin: auto;
+    }
+
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    .footer {
+        text-align: center;
+
+        padding: 20px;
+
+        background: #050d09;
+
+        color: #b8d8c2;
+
+        border-top: 3px solid #2f855a;
+
+        font-size: 13px;
+    }
+
+
+    /* ==================================================
+       TABLET
+    ================================================== */
+
+    @media (max-width: 850px) {
+
+        .content {
+            padding: 30px 25px;
+        }
+
+
+        .ekskul-container {
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
+    }
+
+
+    /* ==================================================
+       HP
+    ================================================== */
+
+    @media (max-width: 600px) {
+
+        body {
+            padding: 10px 0;
+        }
+
+
+        .wrap {
+            width: 95%;
+
+            border-radius: 14px;
+        }
+
+
+        .header {
+            padding: 25px 15px;
+        }
+
+
+        .header img {
+            width: 75px;
+            height: 75px;
+        }
+
+
+        .header h1 {
+            font-size: 22px;
+        }
+
+
+        .header h2 {
+            font-size: 14px;
+        }
+
+
+        .header p {
+            font-size: 12px;
+        }
+
+
+        .content {
+            padding: 25px 15px;
+        }
+
+
+        .judul-ekskul h2 {
+            font-size: 21px;
+        }
+
+
+        .judul-ekskul p {
+            font-size: 13px;
+        }
+
+
+        .ekskul-container {
+            grid-template-columns: 1fr;
+
+            gap: 20px;
+        }
+
+
+        .foto-ekskul {
+            height: 150px;
+        }
+
+
+        .info-ekskul {
+            padding: 25px 18px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ==================================================
+     WRAP
+================================================== -->
+
+<div class="wrap">
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="header">
+
+        <img
+            src="LOGO.png"
+            alt="Logo SMK Mulia Hati Insani">
+
+
+        <h1>
+            SMK MULIA HATI INSANI
+        </h1>
+
+
+        <h2>
+            <marquee>
+                SELAMAT DATANG DI SMK MULIA HATI INSANI
+            </marquee>
+        </h2>
+
+
+        <p>
+            Humanis, Edukatif, Bertanggung Jawab,
+            Aktif, Tawakal
+        </p>
+
+    </header>
+
+
+    <!-- ==================================================
+         CONTENT
+    ================================================== -->
+
+    <main class="content">
+
+
+        <!-- JUDUL -->
+
+        <div class="judul-ekskul">
+
+            <h2>
+                <i class="bx bx-group"></i>
+                EKSTRAKURIKULER
+            </h2>
+
+
+            <p>
+                Kembangkan bakat, minat, kreativitas,
+                kedisiplinan, dan kemampuan bekerja sama
+                melalui berbagai kegiatan ekstrakurikuler
+                di SMK Mulia Hati Insani.
+            </p>
+
+
+            <div class="garis"></div>
+
+        </div>
+
+
+        <!-- ==================================================
+             DAFTAR EKSTRAKURIKULER
+        ================================================== -->
+
+        <div class="ekskul-container">
+
+
+            <!-- ==================================================
+                 PRAMUKA
+            ================================================== -->
+
+            <article class="ekskul-card">
+
+                <div class="foto-ekskul">
+
+                    <img
+                        src="pramuka.jpg"
+                        alt="Ekstrakurikuler Pramuka">
+
+                    <span class="label-foto">
+                        PRAMUKA
+                    </span>
+
+                </div>
+
+
+                <div class="isi-ekskul">
+
+                    <div class="icon-ekskul">
+                        <i class="bx bx-compass"></i>
+                    </div>
+
+
+                    <h3>
+                        Pramuka
+                    </h3>
+
+
+                    <div class="kategori">
+                        KEPEMIMPINAN & KEDISIPLINAN
+                    </div>
+
+
+                    <p>
+                        Kegiatan yang melatih kedisiplinan,
+                        kemandirian, kerja sama,
+                        kepemimpinan, dan keterampilan
+                        siswa melalui berbagai kegiatan
+                        kepramukaan.
+                    </p>
+
+
+                    <span class="label-ekskul">
+                        ORGANISASI
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- ==================================================
+                 PASKIBRA
+            ================================================== -->
+
+            <article class="ekskul-card">
+
+                <div class="foto-ekskul">
+
+                    <img
+                        src="paskibra.jpg"
+                        alt="Ekstrakurikuler Paskibra">
+
+                    <span class="label-foto">
+                        PASKIBRA
+                    </span>
+
+                </div>
+
+
+                <div class="isi-ekskul">
+
+                    <div class="icon-ekskul">
+                        <i class="bx bx-flag"></i>
+                    </div>
+
+
+                    <h3>
+                        Paskibra
+                    </h3>
+
+
+                    <div class="kategori">
+                        DISIPLIN & NASIONALISME
+                    </div>
+
+
+                    <p>
+                        Melatih kedisiplinan, kekompakan,
+                        tanggung jawab, ketahanan fisik,
+                        serta menumbuhkan rasa cinta
+                        tanah air.
+                    </p>
+
+
+                    <span class="label-ekskul">
+                        KEDISIPLINAN
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- ==================================================
+                 FUTSAL
+            ================================================== -->
+
+            <article class="ekskul-card">
+
+                <div class="foto-ekskul">
+
+                    <img
+                        src="futsal.jpg"
+                        alt="Ekstrakurikuler Futsal">
+
+                    <span class="label-foto">
+                        FUTSAL
+                    </span>
+
+                </div>
+
+
+                <div class="isi-ekskul">
+
+                    <div class="icon-ekskul">
+                        <i class="bx bx-football"></i>
+                    </div>
+
+
+                    <h3>
+                        Futsal
+                    </h3>
+
+
+                    <div class="kategori">
+                        OLAHRAGA
+                    </div>
+
+
+                    <p>
+                        Kegiatan olahraga yang bertujuan
+                        meningkatkan kebugaran, kerja sama
+                        tim, sportivitas, dan kemampuan
+                        bermain futsal siswa.
+                    </p>
+
+
+                    <span class="label-ekskul">
+                        OLAHRAGA
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- ==================================================
+                 PMR
+            ================================================== -->
+
+            <article class="ekskul-card">
+
+                <div class="foto-ekskul">
+
+                    <img
+                        src="pmr.jpg"
+                        alt="Ekstrakurikuler PMR">
+
+                    <span class="label-foto">
+                        PMR
+                    </span>
+
+                </div>
+
+
+                <div class="isi-ekskul">
+
+                    <div class="icon-ekskul">
+                        <i class="bx bx-plus-medical"></i>
+                    </div>
+
+
+                    <h3>
+                        PMR
+                    </h3>
+
+
+                    <div class="kategori">
+                        KESEHATAN & KEMANUSIAAN
+                    </div>
+
+
+                    <p>
+                        Kegiatan yang mengenalkan dasar
+                        pertolongan pertama, kepedulian
+                        terhadap sesama, kesehatan,
+                        dan kegiatan kemanusiaan.
+                    </p>
+
+
+                    <span class="label-ekskul">
+                        KEMANUSIAAN
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- ==================================================
+                 ROHIS
+            ================================================== -->
+
+            <article class="ekskul-card">
+
+                <div class="foto-ekskul">
+
+                    <img
+                        src="rohis.jpg"
+                        alt="Ekstrakurikuler Rohis">
+
+                    <span class="label-foto">
+                        ROHIS
+                    </span>
+
+                </div>
+
+
+                <div class="isi-ekskul">
+
+                    <div class="icon-ekskul">
+                        <i class="bx bx-book-heart"></i>
+                    </div>
+
+
+                    <h3>
+                        Rohis
+                    </h3>
+
+
+                    <div class="kategori">
+                        KEAGAMAAN
+                    </div>
+
+
+                    <p>
+                        Kegiatan pembinaan keagamaan yang
+                        bertujuan meningkatkan pemahaman
+                        nilai-nilai agama, akhlak, dan
+                        kepedulian terhadap sesama.
+                    </p>
+
+
+                    <span class="label-ekskul">
+                        KEAGAMAAN
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- ==================================================
+                 SENI
+            ================================================== -->
+
+            <article class="ekskul-card">
+
+                <div class="foto-ekskul">
+
+                    <img
+                        src="seni.jpg"
+                        alt="Ekstrakurikuler Seni">
+
+                    <span class="label-foto">
+                        SENI
+                    </span>
+
+                </div>
+
+
+                <div class="isi-ekskul">
+
+                    <div class="icon-ekskul">
+                        <i class="bx bx-palette"></i>
+                    </div>
+
+
+                    <h3>
+                        Seni & Kreativitas
+                    </h3>
+
+
+                    <div class="kategori">
+                        KREATIVITAS
+                    </div>
+
+
+                    <p>
+                        Wadah bagi siswa untuk mengembangkan
+                        kreativitas melalui berbagai kegiatan
+                        seni, desain, musik, dan karya
+                        kreatif lainnya.
+                    </p>
+
+
+                    <span class="label-ekskul">
+                        KREATIF
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- ==================================================
+             INFO
+        ================================================== -->
+
+        <section class="info-ekskul">
+
+            <i class="bx bx-star"></i>
+
+
+            <h3>
+                Kembangkan Bakat dan Minatmu!
+            </h3>
+
+
+            <p>
+                Ikuti kegiatan ekstrakurikuler sesuai
+                minat dan bakatmu. Jadilah siswa yang
+                aktif, kreatif, disiplin, bertanggung
+                jawab, dan mampu bekerja sama dengan
+                orang lain.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="footer">
+
+        <p>
+            &copy; 2026 SMK MULIA HATI INSANI
+        </p>
+
+    </footer>
+
+
+</div>
+```
+
+</body>
+
+</html>
+```
+
+**Yang perlu kamu lakukan supaya tersambung:**
+
+Di halaman `jurusan.html` atau `dashboard.html`, tambahkan menu:
+
+```html
+<li>
+    <a href="ekstrakurikuler.html">
+        <i class="bx bx-group"></i>
+        Ekstrakurikuler
+    </a>
+</li>
+```
+

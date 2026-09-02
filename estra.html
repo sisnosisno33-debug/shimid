@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ekstrakurikuler - SMK Mulia Hati Insani</title>
+
+    <!-- BOXICONS -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet">
+
+    <style>
+
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* ================================
+           BODY
+        ================================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06120d,
+                    #0b3d2e,
+                    #2f855a,
+                    #a8cdb5
+                );
+
+            min-height: 100vh;
+
+            padding: 25px 0;
+
+            color: #333;
+        }
+
+
+        /* ================================
+           WRAP
+        ================================= */
+
+        .wrap {
+            width: 92%;
+            max-width: 1150px;
+
+            margin: auto;
+
+            background: #f7fff9;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.35);
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .header {
+            text-align: center;
+
+            padding: 35px 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #020806,
+                    #0b3d2e,
+                    #17613f
+                );
+
+            border-bottom: 5px solid #8fbc8f;
+        }
+
+
+        .header img {
+            width: 90px;
+            height: 90px;
+
+            object-fit: contain;
+
+            background: white;
+
+            padding: 5px;
+
+            border-radius: 50%;
+
+            margin-bottom: 12px;
+
+            box-shadow:
+                0 7px 20px rgba(0,0,0,.4);
+
+            transition: .3s;
+        }
+
+
+        .header img:hover {
+            transform:
+                scale(1.08)
+                rotate(3deg);
+        }
+
+
+        .header h1 {
+            font-size: 30px;
+
+            color: #e4f7e9;
+
+            margin-bottom: 10px;
+        }
+
+
+        .header h2 {
+            font-size: 16px;
+
+            color: #9fe3b7;
+
+            margin-bottom: 12px;
+        }
+
+
+        .header p {
+            font-size: 14px;
+
+            color: #c9e5d1;
+        }
+
+
+        /* ================================
+           MENU
+        ================================= */
+
+        .menu {
+            background: #050d09;
+        }
+
+
+        .menu ul {
+            list-style: none;
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+        }
+
+
+        .menu ul li a {
+            display: block;
+
+            padding: 15px 20px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+
+        .menu ul li a:hover,
+        .menu ul li a.active {
+            background: #2f855a;
+        }
+
+
+        .menu ul li a i {
+            font-size: 18px;
+
+            vertical-align: middle;
+
+            margin-right: 5px;
+        }
+
+
+        /* ================================
+           CONTENT
+        ================================= */
+
+        .content {
+            padding: 45px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f8fff9,
+                    #e9f5ed
+                );
+        }
+
+
+        /* ================================
+           JUDUL
+        ================================= */
+
+        .judul {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+
+        .judul h2 {
+            font-size: 29px;
+
+            color: #123d2b;
+
+            margin-bottom: 12px;
+        }
+
+
+        .judul h2 i {
+            color: #2f855a;
+
+            font-size: 32px;
+
+            vertical-align: middle;
+
+            margin-right: 7px;
+        }
+
+
+        .judul p {
+            max-width: 720px;
+
+            margin: auto;
+
+            color: #557064;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .garis {
+            width: 90px;
+
+            height: 4px;
+
+            margin: 18px auto 0;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #0b3d2e,
+                    #55b77c
+                );
+        }
+
+
+        /* ================================
+           GRID
+        ================================= */
+
+        .ekstra-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ================================
+           CARD
+        ================================= */
+
+        .ekstra-card {
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            border: 1px solid #d8ebe0;
+
+            box-shadow:
+                0 8px 22px
+                rgba(5,50,30,.12);
+
+            transition:
+                transform .3s,
+                box-shadow .3s;
+
+            position: relative;
+        }
+
+
+        .ekstra-card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 20px 35px
+                rgba(0,0,0,.20);
+        }
+
+
+        /* ================================
+           GAMBAR
+        ================================= */
+
+        .gambar {
+            width: 100%;
+
+            height: 180px;
+
+            overflow: hidden;
+
+            position: relative;
+
+            background: #dceee2;
+        }
+
+
+        .gambar img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+
+        .ekstra-card:hover
+        .gambar img {
+            transform: scale(1.08);
+        }
+
+
+        /* ================================
+           LABEL
+        ================================= */
+
+        .label {
+            position: absolute;
+
+            left: 12px;
+
+            bottom: 12px;
+
+            padding: 7px 13px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(2,15,9,.88);
+
+            color: white;
+
+            font-size: 11px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           ICON
+        ================================= */
+
+        .icon {
+            width: 65px;
+
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin:
+                -32px auto 12px;
+
+            position: relative;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b3d2e,
+                    #45a66e
+                );
+
+            border: 5px solid white;
+
+            color: white;
+
+            font-size: 30px;
+
+            box-shadow:
+                0 6px 15px
+                rgba(0,60,35,.28);
+        }
+
+
+        /* ================================
+           ISI CARD
+        ================================= */
+
+        .isi {
+            padding: 0 20px 23px;
+
+            text-align: center;
+        }
+
+
+        .isi h3 {
+            color: #163d2d;
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .kategori {
+            display: inline-block;
+
+            color: #23804e;
+
+            background: #e3f3e8;
+
+            padding: 6px 12px;
+
+            border-radius: 20px;
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            margin-bottom: 13px;
+        }
+
+
+        .isi p {
+            color: #5a6c61;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            text-align: justify;
+        }
+
+
+        /* ================================
+           JADWAL
+        ================================= */
+
+        .jadwal {
+            margin-top: 15px;
+
+            padding: 10px;
+
+            background: #f1f8f3;
+
+            border-radius: 8px;
+
+            color: #426354;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+
+        .jadwal i {
+            color: #2f855a;
+
+            font-size: 17px;
+
+            vertical-align: middle;
+
+            margin-right: 5px;
+        }
+
+
+        /* ================================
+           INFO
+        ================================= */
+
+        .info {
+            margin-top: 40px;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06120d,
+                    #0b3d2e,
+                    #27784f
+                );
+
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,.2);
+        }
+
+
+        .info i {
+            font-size: 45px;
+
+            color: #a8d5b5;
+
+            margin-bottom: 10px;
+
+            display: block;
+        }
+
+
+        .info h3 {
+            font-size: 22px;
+
+            color: #e0f4e5;
+
+            margin-bottom: 10px;
+        }
+
+
+        .info p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #cce5d4;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        .footer {
+            text-align: center;
+
+            padding: 20px;
+
+            background: #050d09;
+
+            color: #b8d8c2;
+
+            border-top: 3px solid #2f855a;
+
+            font-size: 13px;
+        }
+
+
+        /* ================================
+           TABLET
+        ================================= */
+
+        @media (max-width: 850px) {
+
+            .content {
+                padding: 30px 25px;
+            }
+
+            .ekstra-container {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+        }
+
+
+        /* ================================
+           HP
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px 0;
+            }
+
+
+            .wrap {
+                width: 95%;
+
+                border-radius: 14px;
+            }
+
+
+            .header {
+                padding: 25px 15px;
+            }
+
+
+            .header img {
+                width: 75px;
+                height: 75px;
+            }
+
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+
+            .header h2 {
+                font-size: 13px;
+            }
+
+
+            .header p {
+                font-size: 12px;
+            }
+
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+
+            .menu ul li a {
+                text-align: center;
+            }
+
+
+            .content {
+                padding: 25px 15px;
+            }
+
+
+            .judul h2 {
+                font-size: 22px;
+            }
+
+
+            .judul p {
+                font-size: 13px;
+            }
+
+
+            .ekstra-container {
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+
+            .gambar {
+                height: 190px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="wrap">
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header class="header">
+
+        <img
+            src="LOGO.png"
+            alt="Logo SMK Mulia Hati Insani">
+
+        <h1>
+            SMK MULIA HATI INSANI
+        </h1>
+
+        <h2>
+            <marquee>
+                SELAMAT DATANG DI SMK MULIA HATI INSANI
+            </marquee>
+        </h2>
+
+        <p>
+            Humanis, Edukatif, Bertanggung Jawab,
+            Aktif, Tawakal
+        </p>
+
+    </header>
+
+
+    <!-- ================================
+         MENU
+    ================================= -->
+
+    <nav class="menu">
+
+        <ul>
+
+            <li>
+                <a href="home.html">
+                    <i class="bx bx-home"></i>
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <i class="bx bx-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="jurusan.html">
+                    <i class="bx bx-book"></i>
+                    Jurusan
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="ekstrakurikuler.html"
+                    class="active">
+
+                    <i class="bx bx-group"></i>
+                    Ekstrakurikuler
+
+                </a>
+            </li>
+
+            <li>
+                <a href="artikel.html">
+                    <i class="bx bx-news"></i>
+                    Artikel
+                </a>
+            </li>
+
+            <li>
+                <a href="kontak.html">
+                    <i class="bx bx-phone"></i>
+                    Kontak
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    <i class="bx bx-log-in"></i>
+                    Login
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================================
+         CONTENT
+    ================================= -->
+
+    <main class="content">
+
+
+        <!-- JUDUL -->
+
+        <section class="judul">
+
+            <h2>
+                <i class="bx bx-group"></i>
+                EKSTRAKURIKULER
+            </h2>
+
+            <p>
+                SMK Mulia Hati Insani menyediakan berbagai
+                kegiatan ekstrakurikuler sebagai wadah bagi
+                siswa untuk mengembangkan bakat, minat,
+                kreativitas, kedisiplinan, kepemimpinan,
+                dan kerja sama.
+            </p>
+
+            <div class="garis"></div>
+
+        </section>
+
+
+        <!-- ================================
+             DAFTAR EKSTRA
+        ================================= -->
+
+        <section class="ekstra-container">
+
+
+            <!-- PRAMUKA -->
+
+            <article class="ekstra-card">
+
+                <div class="gambar">
+
+                    <img
+                        src="pramuka.jpg"
+                        alt="Ekstrakurikuler Pramuka">
+
+                    <span class="label">
+                        ORGANISASI
+                    </span>
+
+                </div>
+
+
+                <div class="icon">
+                    <i class="bx bx-compass"></i>
+                </div>
+
+
+                <div class="isi">
+
+                    <h3>
+                        Pramuka
+                    </h3>
+
+                    <span class="kategori">
+                        KEPEMIMPINAN
+                    </span>
+
+                    <p>
+                        Pramuka melatih siswa menjadi pribadi
+                        yang disiplin, mandiri, bertanggung
+                        jawab, mampu bekerja sama, serta
+                        memiliki jiwa kepemimpinan.
+                    </p>
+
+                    <div class="jadwal">
+                        <i class="bx bx-calendar"></i>
+                        Kegiatan Mingguan
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PASKIBRA -->
+
+            <article class="ekstra-card">
+
+                <div class="gambar">
+
+                    <img
+                        src="paskibra.jpg"
+                        alt="Ekstrakurikuler Paskibra">
+
+                    <span class="label">
+                        KEDISIPLINAN
+                    </span>
+
+                </div>
+
+
+                <div class="icon">
+                    <i class="bx bx-flag"></i>
+                </div>
+
+
+                <div class="isi">
+
+                    <h3>
+                        Paskibra
+                    </h3>
+
+                    <span class="kategori">
+                        NASIONALISME
+                    </span>
+
+                    <p>
+                        Paskibra membentuk sikap disiplin,
+                        kekompakan, tanggung jawab, ketahanan
+                        fisik, serta menumbuhkan rasa cinta
+                        terhadap bangsa dan negara.
+                    </p>
+
+                    <div class="jadwal">
+                        <i class="bx bx-calendar"></i>
+                        Latihan Rutin
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- FUTSAL -->
+
+            <article class="ekstra-card">
+
+                <div class="gambar">
+
+                    <img
+                        src="futsal.jpg"
+                        alt="Ekstrakurikuler Futsal">
+
+                    <span class="label">
+                        OLAHRAGA
+                    </span>
+
+                </div>
+
+
+                <div class="icon">
+                    <i class="bx bx-football"></i>
+                </div>
+
+
+                <div class="isi">
+
+                    <h3>
+                        Futsal
+                    </h3>
+
+                    <span class="kategori">
+                        OLAHRAGA
+                    </span>
+
+                    <p>
+                        Futsal menjadi sarana untuk menjaga
+                        kebugaran tubuh sekaligus melatih
+                        kerja sama tim, sportivitas,
+                        kekompakan, dan strategi permainan.
+                    </p>
+
+                    <div class="jadwal">
+                        <i class="bx bx-calendar"></i>
+                        Latihan Mingguan
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PMR -->
+
+            <article class="ekstra-card">
+
+                <div class="gambar">
+
+                    <img
+                        src="pmr.jpg"
+                        alt="Ekstrakurikuler PMR">
+
+                    <span class="label">
+                        KESEHATAN
+                    </span>
+
+                </div>
+
+
+                <div class="icon">
+                    <i class="bx bx-plus-medical"></i>
+                </div>
+
+
+                <div class="isi">
+
+                    <h3>
+                        PMR
+                    </h3>
+
+                    <span class="kategori">
+                        KEMANUSIAAN
+                    </span>
+
+                    <p>
+                        PMR memberikan pengetahuan dasar
+                        mengenai kesehatan dan pertolongan
+                        pertama serta menumbuhkan rasa
+                        peduli terhadap sesama.
+                    </p>
+
+                    <div class="jadwal">
+                        <i class="bx bx-calendar"></i>
+                        Kegiatan Mingguan
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ROHIS -->
+
+            <article class="ekstra-card">
+
+                <div class="gambar">
+
+                    <img
+                        src="rohis.jpg"
+                        alt="Ekstrakurikuler Rohis">
+
+                    <span class="label">
+                        KEAGAMAAN
+                    </span>
+
+                </div>
+
+
+                <div class="icon">
+                    <i class="bx bx-book-heart"></i>
+                </div>
+
+
+                <div class="isi">
+
+                    <h3>
+                        Rohis
+                    </h3>
+
+                    <span class="kategori">
+                        KEAGAMAAN
+                    </span>
+
+                    <p>
+                        Rohis menjadi wadah bagi siswa untuk
+                        memperdalam nilai-nilai keagamaan,
+                        membangun akhlak yang baik, dan
+                        meningkatkan kepedulian terhadap sesama.
+                    </p>
+
+                    <div class="jadwal">
+                        <i class="bx bx-calendar"></i>
+                        Kegiatan Keagamaan
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SENI -->
+
+            <article class="ekstra-card">
+
+                <div class="gambar">
+
+                    <img
+                        src="seni.jpg"
+                        alt="Ekstrakurikuler Seni">
+
+                    <span class="label">
+                        KREATIVITAS
+                    </span>
+
+                </div>
+
+
+                <div class="icon">
+                    <i class="bx bx-palette"></i>
+                </div>
+
+
+                <div class="isi">
+
+                    <h3>
+                        Seni & Kreativitas
+                    </h3>
+
+                    <span class="kategori">
+                        SENI
+                    </span>
+
+                    <p>
+                        Kegiatan seni menjadi tempat siswa
+                        mengembangkan kreativitas melalui
+                        musik, desain, karya seni, dan berbagai
+                        kegiatan kreatif lainnya.
+                    </p>
+
+                    <div class="jadwal">
+                        <i class="bx bx-calendar"></i>
+                        Kegiatan Kreatif
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- ================================
+             INFO
+        ================================= -->
+
+        <section class="info">
+
+            <i class="bx bx-star"></i>
+
+            <h3>
+                Kembangkan Bakat dan Minatmu!
+            </h3>
+
+            <p>
+                Jangan takut untuk mencoba hal baru.
+                Ikuti ekstrakurikuler sesuai dengan
+                minat dan bakatmu. Jadilah siswa yang
+                aktif, kreatif, disiplin, bertanggung
+                jawab, dan mampu bekerja sama dengan
+                orang lain.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="footer">
+
+        <p>
+            &copy; 2026 SMK MULIA HATI INSANI
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>
